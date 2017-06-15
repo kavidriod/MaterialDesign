@@ -13,13 +13,13 @@
 
         <item
             android:icon="@drawable/ic_markunread_black_24dp"
-            android:title="One"
+            android:title="Two"
             android:tint="@color/button_grey">
             </item>
 
         <item
             android:icon="@drawable/ic_brightness_high_black_24dp"
-            android:title="Two"
+            android:title="Three"
             android:tint="@color/button_grey">
 
         </item>

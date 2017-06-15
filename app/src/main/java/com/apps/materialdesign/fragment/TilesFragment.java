@@ -2,6 +2,7 @@ package com.apps.materialdesign.fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
@@ -16,7 +17,10 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.apps.materialdesign.DetailActivity;
 import com.apps.materialdesign.R;
+
+import static com.apps.materialdesign.fragment.ListFragment.ContentAdapter.TAG;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,6 +58,17 @@ public class TilesFragment extends Fragment {
             super(inflater.inflate(R.layout.fragment_tiles, parent, false));
             picture = (ImageView) itemView.findViewById(R.id.tile_picture);
             name = (TextView) itemView.findViewById(R.id.tile_title);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Context context = v.getContext();
+                    Intent intent = new Intent(context, DetailActivity.class);
+                    Log.i(TAG,"getAdapterPosition ? "+getAdapterPosition());
+                    intent.putExtra(DetailActivity.EXTRA_POSITION,getAdapterPosition());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
     /**

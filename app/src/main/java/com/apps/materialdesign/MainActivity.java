@@ -68,10 +68,11 @@ NavigationView navigationView;
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null){
-            VectorDrawableCompat vectorDrawableCompat = VectorDrawableCompat.create(getResources(),R.drawable.ic_menu,getTheme());
+            VectorDrawableCompat vectorDrawableCompat = VectorDrawableCompat
+                    .create(getResources(),R.drawable.ic_menu,getTheme());
             vectorDrawableCompat.setTint(ResourcesCompat.getColor(getResources(),R.color.white,getTheme()));
             actionBar.setHomeAsUpIndicator(vectorDrawableCompat);
-            actionBar.setDisplayShowHomeEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
         }
 
 
